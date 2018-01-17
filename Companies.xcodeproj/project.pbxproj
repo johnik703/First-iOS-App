@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65EB8936200AE883006B18C7 /* CompanyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB8935200AE883006B18C7 /* CompanyInfoViewController.swift */; };
+		65EB8978200C2211006B18C7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB8977200C2211006B18C7 /* CoreDataManager.swift */; };
+		65EB8984200C45C2006B18C7 /* CompanyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65EB8982200C45C2006B18C7 /* CompanyModel.xcdatamodeld */; };
 		65FDC0A9200AB54B00152EED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDC0A8200AB54B00152EED /* AppDelegate.swift */; };
-		65FDC0AB200AB54B00152EED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDC0AA200AB54B00152EED /* ViewController.swift */; };
+		65FDC0AB200AB54B00152EED /* CompaniesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDC0AA200AB54B00152EED /* CompaniesController.swift */; };
 		65FDC0AE200AB54B00152EED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FDC0AC200AB54B00152EED /* Main.storyboard */; };
 		65FDC0B0200AB54B00152EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65FDC0AF200AB54B00152EED /* Assets.xcassets */; };
 		65FDC0B3200AB54B00152EED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FDC0B1200AB54B00152EED /* LaunchScreen.storyboard */; };
+		65FDC0BD200AC04700152EED /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDC0BC200AC04700152EED /* CustomNavigationController.swift */; };
+		65FDC0BF200AD70C00152EED /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDC0BE200AD70C00152EED /* UIColor+theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65EB8935200AE883006B18C7 /* CompanyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoViewController.swift; sourceTree = "<group>"; };
+		65EB8977200C2211006B18C7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		65EB8983200C45C2006B18C7 /* CompanyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyModel.xcdatamodel; sourceTree = "<group>"; };
 		65FDC0A5200AB54B00152EED /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FDC0A8200AB54B00152EED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65FDC0AA200AB54B00152EED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		65FDC0AA200AB54B00152EED /* CompaniesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesController.swift; sourceTree = "<group>"; };
 		65FDC0AD200AB54B00152EED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65FDC0AF200AB54B00152EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65FDC0B2200AB54B00152EED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65FDC0B4200AB54B00152EED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65FDC0BC200AC04700152EED /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		65FDC0BE200AD70C00152EED /* UIColor+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +65,16 @@
 			isa = PBXGroup;
 			children = (
 				65FDC0A8200AB54B00152EED /* AppDelegate.swift */,
-				65FDC0AA200AB54B00152EED /* ViewController.swift */,
+				65EB8982200C45C2006B18C7 /* CompanyModel.xcdatamodeld */,
+				65EB8935200AE883006B18C7 /* CompanyInfoViewController.swift */,
+				65FDC0AA200AB54B00152EED /* CompaniesController.swift */,
+				65EB8977200C2211006B18C7 /* CoreDataManager.swift */,
+				65FDC0BC200AC04700152EED /* CustomNavigationController.swift */,
 				65FDC0AC200AB54B00152EED /* Main.storyboard */,
 				65FDC0AF200AB54B00152EED /* Assets.xcassets */,
 				65FDC0B1200AB54B00152EED /* LaunchScreen.storyboard */,
 				65FDC0B4200AB54B00152EED /* Info.plist */,
+				65FDC0BE200AD70C00152EED /* UIColor+theme.swift */,
 			);
 			path = Companies;
 			sourceTree = "<group>";
@@ -136,7 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65FDC0AB200AB54B00152EED /* ViewController.swift in Sources */,
+				65EB8984200C45C2006B18C7 /* CompanyModel.xcdatamodeld in Sources */,
+				65FDC0BD200AC04700152EED /* CustomNavigationController.swift in Sources */,
+				65FDC0BF200AD70C00152EED /* UIColor+theme.swift in Sources */,
+				65FDC0AB200AB54B00152EED /* CompaniesController.swift in Sources */,
+				65EB8936200AE883006B18C7 /* CompanyInfoViewController.swift in Sources */,
+				65EB8978200C2211006B18C7 /* CoreDataManager.swift in Sources */,
 				65FDC0A9200AB54B00152EED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +342,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		65EB8982200C45C2006B18C7 /* CompanyModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				65EB8983200C45C2006B18C7 /* CompanyModel.xcdatamodel */,
+			);
+			currentVersion = 65EB8983200C45C2006B18C7 /* CompanyModel.xcdatamodel */;
+			path = CompanyModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 65FDC09D200AB54B00152EED /* Project object */;
 }
