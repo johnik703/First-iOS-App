@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		659EC45020116CEA00E15F0D /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC44F20116CEA00E15F0D /* CompanyCell.swift */; };
 		65EB8936200AE883006B18C7 /* CompanyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB8935200AE883006B18C7 /* CompanyInfoViewController.swift */; };
 		65EB8978200C2211006B18C7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB8977200C2211006B18C7 /* CoreDataManager.swift */; };
 		65EB8984200C45C2006B18C7 /* CompanyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65EB8982200C45C2006B18C7 /* CompanyModel.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		659EC44F20116CEA00E15F0D /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		65EB8935200AE883006B18C7 /* CompanyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoViewController.swift; sourceTree = "<group>"; };
 		65EB8977200C2211006B18C7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		65EB8983200C45C2006B18C7 /* CompanyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyModel.xcdatamodel; sourceTree = "<group>"; };
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		659EC45120116DD300E15F0D /* Companies */ = {
+			isa = PBXGroup;
+			children = (
+				659EC44F20116CEA00E15F0D /* CompanyCell.swift */,
+				65FDC0AA200AB54B00152EED /* CompaniesController.swift */,
+			);
+			path = Companies;
+			sourceTree = "<group>";
+		};
 		65FDC09C200AB54B00152EED = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +75,10 @@
 		65FDC0A7200AB54B00152EED /* Companies */ = {
 			isa = PBXGroup;
 			children = (
+				659EC45120116DD300E15F0D /* Companies */,
 				65FDC0A8200AB54B00152EED /* AppDelegate.swift */,
 				65EB8982200C45C2006B18C7 /* CompanyModel.xcdatamodeld */,
 				65EB8935200AE883006B18C7 /* CompanyInfoViewController.swift */,
-				65FDC0AA200AB54B00152EED /* CompaniesController.swift */,
 				65EB8977200C2211006B18C7 /* CoreDataManager.swift */,
 				65FDC0BC200AC04700152EED /* CustomNavigationController.swift */,
 				65FDC0AC200AB54B00152EED /* Main.storyboard */,
@@ -154,6 +165,7 @@
 				65EB8984200C45C2006B18C7 /* CompanyModel.xcdatamodeld in Sources */,
 				65FDC0BD200AC04700152EED /* CustomNavigationController.swift in Sources */,
 				65FDC0BF200AD70C00152EED /* UIColor+theme.swift in Sources */,
+				659EC45020116CEA00E15F0D /* CompanyCell.swift in Sources */,
 				65FDC0AB200AB54B00152EED /* CompaniesController.swift in Sources */,
 				65EB8936200AE883006B18C7 /* CompanyInfoViewController.swift in Sources */,
 				65EB8978200C2211006B18C7 /* CoreDataManager.swift in Sources */,

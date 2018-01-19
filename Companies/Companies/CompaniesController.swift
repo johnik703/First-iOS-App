@@ -29,9 +29,28 @@ class CompaniesController: UITableViewController, CompanyInfoViewControllerDeleg
     
     private func setupNavigationBar() {
         navigationItem.title = "Companies"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(handleReset))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "plus"), style: .plain, target: self, action: #selector(handleAddCompany))
     }
-    
+    @objc private func handleReset() {
+        print("Handling reset of data...")
+        let context = CoreDataManager.shared.persitentDataContainer.viewContext
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: Company.fetchRequest())
+        do {
+            try context.execute(batchDeleteRequest)
+            
+            var indexPathsToRemove = [IndexPath]()
+            for (index, _) in companies.enumerated() {
+                let indexPath = IndexPath(row: index, section: 0)
+                indexPathsToRemove.append(indexPath)
+            }
+            
+            companies.removeAll()
+            tableView.deleteRows(at: indexPathsToRemove, with: .left)
+        } catch let deleteError {
+            print("Batch Delete Request failed", deleteError)
+        }
+    }
     // (Add Company) Button Pressed
     @objc private func handleAddCompany() {
         let createCompanyViewController = CompanyInfoViewController()
@@ -41,10 +60,23 @@ class CompaniesController: UITableViewController, CompanyInfoViewControllerDeleg
     }
     
     private func setupTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+        tableView.register(CompanyCell.self, forCellReuseIdentifier: "cellId")
         tableView.tableFooterView = UIView()
         fetchData()
         setupTableViewStyles()
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "No companies available..."
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        return label
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return companies.count == 0 ? 150 : 0
     }
     
     private func fetchData() {
@@ -83,6 +115,9 @@ class CompaniesController: UITableViewController, CompanyInfoViewControllerDeleg
             dateFormatter.dateFormat = "MMM dd, yyyy"
             let foundedDateString = dateFormatter.string(from: foundedDate)
             cellTextArray.append(foundedDateString)
+        }
+        if let imageData = company.imageData {
+            cell.imageView?.image = UIImage(data: imageData)
         }
         let cellText = cellTextArray.joined(separator: " - ")
         cell.textLabel?.text = cellText
