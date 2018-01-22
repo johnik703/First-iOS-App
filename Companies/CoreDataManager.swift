@@ -10,9 +10,8 @@ import CoreData
 
 struct CoreDataManager {
     static let shared = CoreDataManager()
+    
     let persitentDataContainer: NSPersistentContainer = {
-        // Create a container to hold the context data
-        // Tell Xcode what file to go to
         let container = NSPersistentContainer(name: "CompanyModel")
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error {
@@ -21,9 +20,46 @@ struct CoreDataManager {
         }
         return container
     }()
+    
+    func fetchCompanies() -> [Company] {
+        let context = persitentDataContainer.viewContext
+        let fetchRequest = NSFetchRequest<Company>(entityName: "Company")
+        do {
+            let allCompanies = try context.fetch(fetchRequest)
+            return allCompanies
+        } catch let fetchError {
+            print("Failed to fetch Companies objects: ", fetchError)
+            return []
+        }
+    }
+    
+    func deleteAllCompanies() -> Bool {
+        let context = CoreDataManager.shared.persitentDataContainer.viewContext
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: Company.fetchRequest())
+        do {
+            try context.execute(batchDeleteRequest)
+            return true
+        } catch let deleteError {
+            print("There was an error resetting the company objects", deleteError)
+            return false
+        }
+    }
+    
+    func saveEmployee(name: String, birthday: Date, employeeType: String, company: Company) -> (Employee?, Error?) {
+        let context = persitentDataContainer.viewContext
+        let employee = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: context) as! Employee
+        employee.company = company
+        employee.name = name
+        employee.type = employeeType
+        let employeeInformation = NSEntityDescription.insertNewObject(forEntityName: "EmployeeInformation", into: context) as! EmployeeInformation
+        employeeInformation.birthday = birthday
+        employee.employeeInformation = employeeInformation
+        do {
+            try context.save()
+            return (employee, nil)
+        } catch let employeeSaveError {
+            print("There was an error saving the employee", employeeSaveError)
+            return (nil, employeeSaveError)
+        }
+    }
 }
-
-// In CoreDataManager, Create a container to hold the data for a specific model(file).
-// In the main view(CompaniesController) load up all the data from an entity(Company) in the container created here.
-// In the add view(NewCompanyController) select an entity(Company) from the container created here, and add some data to that entity(name), then save it back to the entity and save the entire container's context, and send call to the delegate's didSaveCompany function.
-// In the main view(CompaniesController) load up all the data from the entity(Company) in the container created here, then activate that call to didSaveCompany(), which updates the tableview with another row to display the newly saved company in the CoreData.

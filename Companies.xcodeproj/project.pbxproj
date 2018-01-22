@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		659EC45020116CEA00E15F0D /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC44F20116CEA00E15F0D /* CompanyCell.swift */; };
+		659EC4552013A18200E15F0D /* CompaniesController+CompanyInfoViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC4542013A18200E15F0D /* CompaniesController+CompanyInfoViewControllerDelegate.swift */; };
+		659EC4572013A27300E15F0D /* CompaniesController+TableViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC4562013A27300E15F0D /* CompaniesController+TableViewSetup.swift */; };
+		659EC4592013C31600E15F0D /* EmployeesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC4582013C31600E15F0D /* EmployeesController.swift */; };
+		659EC45C2013CC9E00E15F0D /* UIViewControllers+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC45B2013CC9E00E15F0D /* UIViewControllers+Utilities.swift */; };
+		659EC45E2013DDF900E15F0D /* EmployeeInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC45D2013DDF900E15F0D /* EmployeeInfoController.swift */; };
+		659EC4612015737000E15F0D /* EmployeeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC4602015737000E15F0D /* EmployeeType.swift */; };
 		65EB8936200AE883006B18C7 /* CompanyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB8935200AE883006B18C7 /* CompanyInfoViewController.swift */; };
 		65EB8978200C2211006B18C7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB8977200C2211006B18C7 /* CoreDataManager.swift */; };
 		65EB8984200C45C2006B18C7 /* CompanyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65EB8982200C45C2006B18C7 /* CompanyModel.xcdatamodeld */; };
@@ -22,6 +28,12 @@
 
 /* Begin PBXFileReference section */
 		659EC44F20116CEA00E15F0D /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
+		659EC4542013A18200E15F0D /* CompaniesController+CompanyInfoViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+CompanyInfoViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		659EC4562013A27300E15F0D /* CompaniesController+TableViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+TableViewSetup.swift"; sourceTree = "<group>"; };
+		659EC4582013C31600E15F0D /* EmployeesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesController.swift; sourceTree = "<group>"; };
+		659EC45B2013CC9E00E15F0D /* UIViewControllers+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllers+Utilities.swift"; sourceTree = "<group>"; };
+		659EC45D2013DDF900E15F0D /* EmployeeInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInfoController.swift; sourceTree = "<group>"; };
+		659EC4602015737000E15F0D /* EmployeeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeType.swift; sourceTree = "<group>"; };
 		65EB8935200AE883006B18C7 /* CompanyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoViewController.swift; sourceTree = "<group>"; };
 		65EB8977200C2211006B18C7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		65EB8983200C45C2006B18C7 /* CompanyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyModel.xcdatamodel; sourceTree = "<group>"; };
@@ -50,10 +62,31 @@
 		659EC45120116DD300E15F0D /* Companies */ = {
 			isa = PBXGroup;
 			children = (
+				659EC45F2014E3FB00E15F0D /* Employees */,
 				659EC44F20116CEA00E15F0D /* CompanyCell.swift */,
 				65FDC0AA200AB54B00152EED /* CompaniesController.swift */,
+				659EC4542013A18200E15F0D /* CompaniesController+CompanyInfoViewControllerDelegate.swift */,
+				659EC4562013A27300E15F0D /* CompaniesController+TableViewSetup.swift */,
 			);
 			path = Companies;
+			sourceTree = "<group>";
+		};
+		659EC45A2013CC8400E15F0D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				659EC45B2013CC9E00E15F0D /* UIViewControllers+Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		659EC45F2014E3FB00E15F0D /* Employees */ = {
+			isa = PBXGroup;
+			children = (
+				659EC4582013C31600E15F0D /* EmployeesController.swift */,
+				659EC4602015737000E15F0D /* EmployeeType.swift */,
+				659EC45D2013DDF900E15F0D /* EmployeeInfoController.swift */,
+			);
+			path = Employees;
 			sourceTree = "<group>";
 		};
 		65FDC09C200AB54B00152EED = {
@@ -75,6 +108,7 @@
 		65FDC0A7200AB54B00152EED /* Companies */ = {
 			isa = PBXGroup;
 			children = (
+				659EC45A2013CC8400E15F0D /* Utilities */,
 				659EC45120116DD300E15F0D /* Companies */,
 				65FDC0A8200AB54B00152EED /* AppDelegate.swift */,
 				65EB8982200C45C2006B18C7 /* CompanyModel.xcdatamodeld */,
@@ -163,12 +197,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				65EB8984200C45C2006B18C7 /* CompanyModel.xcdatamodeld in Sources */,
+				659EC45C2013CC9E00E15F0D /* UIViewControllers+Utilities.swift in Sources */,
 				65FDC0BD200AC04700152EED /* CustomNavigationController.swift in Sources */,
 				65FDC0BF200AD70C00152EED /* UIColor+theme.swift in Sources */,
 				659EC45020116CEA00E15F0D /* CompanyCell.swift in Sources */,
+				659EC45E2013DDF900E15F0D /* EmployeeInfoController.swift in Sources */,
+				659EC4572013A27300E15F0D /* CompaniesController+TableViewSetup.swift in Sources */,
+				659EC4612015737000E15F0D /* EmployeeType.swift in Sources */,
 				65FDC0AB200AB54B00152EED /* CompaniesController.swift in Sources */,
+				659EC4592013C31600E15F0D /* EmployeesController.swift in Sources */,
 				65EB8936200AE883006B18C7 /* CompanyInfoViewController.swift in Sources */,
 				65EB8978200C2211006B18C7 /* CoreDataManager.swift in Sources */,
+				659EC4552013A18200E15F0D /* CompaniesController+CompanyInfoViewControllerDelegate.swift in Sources */,
 				65FDC0A9200AB54B00152EED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
